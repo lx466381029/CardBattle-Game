@@ -73,10 +73,10 @@ def weaken_attack_event(battle_context):
 def discard_card_event(battle_context):
     """随机弃置一张手牌"""
     if len(battle_context.card_system.hand) > 0:
-        discarded_card = random.choice(battle_context.card_system.hand)
-        battle_context.card_system.hand.remove(discarded_card)
-        battle_context.card_system.played_cards.append(discarded_card)
-        battle_context.log(f"你弃置了 {discarded_card.name}")
+        card_index = random.randrange(len(battle_context.card_system.hand))
+        discarded_card = battle_context.card_system.remove_card_from_hand(card_index)
+        if discarded_card:
+            battle_context.log(f"你弃置了 {discarded_card.name}")
     else:
         battle_context.log("手牌为空，无法弃置")
 
