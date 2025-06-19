@@ -1,0 +1,8 @@
+# 游戏基础配置
+SCREEN_WIDTH = 1024
+SCREEN_HEIGHT = 768
+FPS = 60
+BACKGROUND_COLOR = (20, 20, 40)
+
+# 游戏标题
+GAME_TITLE = "Card Battle Game" 
